@@ -4,6 +4,16 @@
 
 This container allows you to easily set up an OpenStreetMap PNG tile server given a `.osm.pbf` file. It is based on the [latest Ubuntu 18.04 LTS guide](https://switch2osm.org/serving-tiles/manually-building-a-tile-server-18-04-lts/) from [switch2osm.org](https://switch2osm.org/) and therefore uses the default OpenStreetMap style.
 
+## How to use this repo
+
+First clone this repo locally:
+
+    git clone https://github.com/ashish1405/openstreetmap-tile-server.git
+    
+Next generate docker image
+
+    sudo docker build openstreetmap-tile-server
+
 ## Setting up the server
 
 First create a Docker volume to hold the PostgreSQL database that will contain the OpenStreetMap data:
