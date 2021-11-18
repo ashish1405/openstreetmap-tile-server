@@ -14,7 +14,7 @@ Next, download an .osm.pbf extract from geofabrik.de for the region that you're 
 
 ```
 docker run \
-    -v /absolute/path/to/luxembourg.osm.pbf:/data.osm.pbf \
+    -v /absolute/path/to/india-latest.osm.pbf:/data.osm.pbf \
     -v openstreetmap-data:/var/lib/postgresql/12/main \
     overv/openstreetmap-tile-server \
     import
@@ -29,8 +29,8 @@ If your import is an extract of the planet and has polygonal bounds associated w
 ```
 docker run \
     -e UPDATES=enabled \
-    -v /absolute/path/to/luxembourg.osm.pbf:/data.osm.pbf \
-    -v /absolute/path/to/luxembourg.poly:/data.poly \
+    -v /absolute/path/to/india-latest.osm.pbf:/data.osm.pbf \
+    -v /absolute/path/to/india.poly:/data.poly \
     -v openstreetmap-data:/var/lib/postgresql/12/main \
     overv/openstreetmap-tile-server \
     import
@@ -44,8 +44,8 @@ It is also possible to let the container download files for you rather than moun
 
 ```
 docker run \
-    -e DOWNLOAD_PBF=https://download.geofabrik.de/europe/luxembourg-latest.osm.pbf \
-    -e DOWNLOAD_POLY=https://download.geofabrik.de/europe/luxembourg.poly \
+    -e DOWNLOAD_PBF=https://download.geofabrik.de/asia/india-latest.osm.pbf \
+    -e DOWNLOAD_POLY=https://download.geofabrik.de/asia/india.poly \
     -v openstreetmap-data:/var/lib/postgresql/12/main \
     overv/openstreetmap-tile-server \
     import
